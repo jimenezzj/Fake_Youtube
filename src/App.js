@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useReducer, useState } from 'react';
+import './App.scss';
+import Layout from './containers/Layout/Layout';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Home from './components/HomeArea/HomeArea';
+import Video from './components/Video/Video';
+
 
 function App() {
+  // const homeRoutes = "/| ";
+
+  const [stateSearchVal, setStateSearchVal] = useState("");
+
+
+  useEffect(() => {
+    console.log(stateSearchVal);
+  }, [stateSearchVal]);
+
+  const searchItem = (e) => {
+    setStateSearchVal(e);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout searchItem={searchItem}>
+        <Switch>
+          <Redirect exact from={"/"} to="/home" />
+          <Route path={"/home"}>
+            <Home valSearched={stateSearchVal} />
+          </Route>
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

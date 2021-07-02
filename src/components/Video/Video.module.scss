@@ -1,0 +1,15 @@
+.Video {
+  display: flex;
+  width: 100%;
+
+  .VideoArea {
+    width: 80%;
+    padding: 1rem 1.5rem;
+  }
+}
+.VideosList {
+  padding: 1rem 1.5rem 0 0;
+  flex-grow: 1;
+}
+// PlayList
+

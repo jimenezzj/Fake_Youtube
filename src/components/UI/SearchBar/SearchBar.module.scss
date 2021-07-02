@@ -1,0 +1,31 @@
+.Search {
+  display: flex;
+  background-color: #181818;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  &::focus {
+    border: 2px solid var(--clr_light);
+  }
+  .Search__Fld {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+    color: #e4e4e4;
+    background-color: inherit;
+  }
+  & svg {
+    color: #dcdcdc;
+    margin: 0 1rem;
+    font-size: 1.125rem;
+    display: flex;
+  }
+  .Search__Fld {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+  }
+  .BtnSearch {
+    background-color: #2b2b2b;
+  }
+}

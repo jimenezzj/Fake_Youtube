@@ -1,0 +1,13 @@
+.Playlist {
+  width: 100%;
+}
+.PlaylistHeader {
+  display: flex;
+  justify-content: space-between;
+  .PlaylistHeader__Title {
+    font-size: 1.5rem;
+  }
+  .PlaylistHeader__Settings {
+    margin: auto 0;
+  }
+}
